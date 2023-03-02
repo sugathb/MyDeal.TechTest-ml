@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Test App</h1>
+    <p class="lead">Click this button to call your API:</p>
+    <input type="submit" value="Call API" class="btn btn-default" id="btnSubmit" />
+    <h2>User Details</h2>
+    <div id="user-details"></div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        'use strict';
+
+        const e = React.createElement;
+
+        class UserComponent extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+
+            render() {
+                return e('ul',
+                    { className: 'list-group' },
+                    [e(
+                        'li',
+                        { key: 1 },
+                        'First name: ' + this.props.user.FirstName
+                    ), e(
+                        'li',
+                        { key: 1 },
+                        'Last name: ' + this.props.user.LastName
+                    ), e(
+                        'li',
+                        { key: 1 },
+                        'Email: ' + this.props.user.Email
+                    )]);
+            }
+        }
+
+        $(document).ready(function () {
+            $(function () {
+                $('#btnSubmit').click(function (event) {
+                    event.preventDefault();
+                    $.ajax({
+                        type: "GET",
+                        url: "/Settings",
+                        success: function (data) {
+                            alert(data.Message);
+                            const domContainer = document.querySelector('#user-details');
+                            const root = ReactDOM.createRoot(domContainer);
+                            root.render(e(UserComponent, { user: data.User }));
+                        },
+                        error: function (e) {
+                            console.error(e);
+                            alert("Error!");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+}
