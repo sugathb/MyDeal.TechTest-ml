@@ -1,7 +1,6 @@
 ﻿using MyDeal.TechTest.Models;
-using System.Configuration;
-using System.Web.Mvc;
 using MyDeal.TechTest.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MyDeal.TechTest.Controllers
 {
@@ -10,11 +9,13 @@ namespace MyDeal.TechTest.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return Json(new SettingsVm
+            var user = UserService.GetUserDetails("2")?.Data;
+            var response = new SettingsVm
             {
                 User = UserService.GetUserDetails("2")?.Data,
-                Message = ConfigurationManager.AppSettings["Settings:Message"]
-            }, JsonRequestBehavior.AllowGet);
+                Message = "To be read from app settings"
+            };
+            return Ok(response);
         }
     }
 }
