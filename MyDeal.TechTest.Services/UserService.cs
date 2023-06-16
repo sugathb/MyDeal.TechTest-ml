@@ -5,11 +5,11 @@ using Newtonsoft.Json;
 
 namespace MyDeal.TechTest.Services
 {
-    public static class UserService
+    public class UserService: IUserService
     {
         public static Func<string, WebRequest> WebRequestFactory = WebRequest.Create;
 
-        public static UserData GetUserDetails(string userId)
+        public UserData GetUserDetails(string userId)
         {
             var response = WebRequestFactory("https://reqres.in/api/users/" + userId).GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());

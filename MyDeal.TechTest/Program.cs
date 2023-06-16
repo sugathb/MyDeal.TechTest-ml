@@ -1,10 +1,8 @@
 
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSystemWebAdapters();
-builder.Services.AddHttpForwarder();
+using MyDeal.TechTest.Services;
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+var builder = WebApplication.CreateBuilder(args);
+ConfigureServices();
 
 var app = builder.Build();
 
@@ -24,3 +22,13 @@ app.MapDefaultControllerRoute();
 app.MapForwarder("/{**catch-all}", app.Configuration["ProxyTo"]).Add(static builder => ((RouteEndpointBuilder)builder).Order = int.MaxValue);
 
 app.Run();
+
+
+// Add services to the container.
+void ConfigureServices()
+{
+    builder.Services.AddSystemWebAdapters();
+    builder.Services.AddHttpForwarder();
+    builder.Services.AddScoped<IUserService, UserService>();
+    builder.Services.AddControllersWithViews();
+}
