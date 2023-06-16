@@ -6,13 +6,19 @@ namespace MyDeal.TechTest.Controllers
 {
     public class SettingsController : Controller
     {
+        private readonly IUserService _userService;
+
+        public SettingsController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
         [HttpGet]
         public ActionResult Index()
         {
-            var user = UserService.GetUserDetails("2")?.Data;
             var response = new SettingsVm
             {
-                User = UserService.GetUserDetails("2")?.Data,
+                User = _userService.GetUserDetails("2")?.Data,
                 Message = "To be read from app settings"
             };
             return Ok(response);
