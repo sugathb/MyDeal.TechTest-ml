@@ -4,11 +4,15 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using MyDeal.TechTest.Core.Models;
+using MyDeal.TechTest.Core.Infrastructure;
+using Serilog;
 
 namespace MyDeal.TechTest.Core.Middleware
 {
     public class ErrorHandlingMiddleware : IMiddleware
     {
+        private readonly ILogger _logger = Log.ForContext<UserDetailsClient>();
+
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try
@@ -17,6 +21,7 @@ namespace MyDeal.TechTest.Core.Middleware
             }
             catch (Exception ex)
             {
+                _logger.Error(ex, ex.Message);
                 await HandleExceptionAsync(context, ex);
             }
         }
