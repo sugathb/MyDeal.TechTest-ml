@@ -1,7 +1,7 @@
 using Microsoft.Net.Http.Headers;
 using MyDeal.TechTest.Core.Infrastructure;
+using MyDeal.TechTest.Core.Models;
 using MyDeal.TechTest.Core.Queries;
-using MyDeal.TechTest.Core.Services;
 using Polly;
 using Polly.Contrib.WaitAndRetry;
 using Polly.Extensions.Http;
@@ -33,9 +33,10 @@ app.Run();
 // Add services to the container.
 void ConfigureServices()
 {
+    builder.Services.Configure<SettingsOptions>(builder.Configuration.GetSection("Settings"));
+
     builder.Services.AddSystemWebAdapters();
     builder.Services.AddHttpForwarder();
-    builder.Services.AddScoped<IUserService, UserService>();
     builder.Services.AddControllersWithViews();
 
     builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(GetUserSettingsAsyncQuery)));
