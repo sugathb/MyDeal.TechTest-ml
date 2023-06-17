@@ -1,20 +1,19 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using Newtonsoft.Json;
+﻿using System.Threading.Tasks;
 
 namespace MyDeal.TechTest.Services
 {
     public class UserService: IUserService
     {
-        public static Func<string, WebRequest> WebRequestFactory = WebRequest.Create;
+        private readonly IUserDetailsClient _userDetailsClient;
 
-        public UserData GetUserDetails(string userId)
+        public UserService(IUserDetailsClient userDetailsClient)
         {
-            var response = WebRequestFactory("https://reqres.in/api/users/" + userId).GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
-            string json = reader.ReadToEnd();
-            return JsonConvert.DeserializeObject<UserData>(json);
+            _userDetailsClient = userDetailsClient;
+        }
+
+        public async Task<UserData> GetUserDetails(string userId)
+        {
+            return await _userDetailsClient.GetUserDetailsAsync(userId);
         }
     }
 }

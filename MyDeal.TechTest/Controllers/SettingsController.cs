@@ -14,13 +14,16 @@ namespace MyDeal.TechTest.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+            var userData = await _userService.GetUserDetails("2");
+
             var response = new SettingsVm
             {
-                User = _userService.GetUserDetails("2")?.Data,
+                User = userData.Data,
                 Message = "To be read from app settings"
             };
+
             return Ok(response);
         }
     }

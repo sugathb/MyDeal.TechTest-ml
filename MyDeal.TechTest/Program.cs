@@ -1,4 +1,5 @@
 
+using Microsoft.Net.Http.Headers;
 using MyDeal.TechTest.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,4 +32,11 @@ void ConfigureServices()
     builder.Services.AddHttpForwarder();
     builder.Services.AddScoped<IUserService, UserService>();
     builder.Services.AddControllersWithViews();
+
+    builder.Services.AddHttpClient<IUserDetailsClient, UserDetailsClient>(httpClient =>
+    {
+        httpClient.BaseAddress = new Uri("https://reqres.in/api/users/");
+        httpClient.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+        httpClient.Timeout = TimeSpan.FromMinutes(1);
+    });
 }
