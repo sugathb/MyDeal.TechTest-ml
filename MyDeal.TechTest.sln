@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDeal.TechTest.Services.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDeal.TechTest", "MyDeal.TechTest\MyDeal.TechTest.csproj", "{3EDE5AEF-B840-4374-AD99-A4168AE6F033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDeal.TechTest.Core", "MyDeal.TechTest.Core\MyDeal.TechTest.Core.csproj", "{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3EDE5AEF-B840-4374-AD99-A4168AE6F033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EDE5AEF-B840-4374-AD99-A4168AE6F033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EDE5AEF-B840-4374-AD99-A4168AE6F033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

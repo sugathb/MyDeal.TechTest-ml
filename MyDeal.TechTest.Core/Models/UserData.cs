@@ -1,7 +1,6 @@
 ﻿using System.Text.Json.Serialization;
-using Newtonsoft.Json;
 
-namespace MyDeal.TechTest.Services
+namespace MyDeal.TechTest.Core.Models
 {
     public class UserData
     {

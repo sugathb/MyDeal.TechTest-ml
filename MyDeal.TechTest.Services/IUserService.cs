@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using MyDeal.TechTest.Core.Models;
 
 namespace MyDeal.TechTest.Services;
 

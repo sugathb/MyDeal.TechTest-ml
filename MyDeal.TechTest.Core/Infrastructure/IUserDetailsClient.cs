@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using MyDeal.TechTest.Core.Models;
 
-namespace MyDeal.TechTest.Services;
+namespace MyDeal.TechTest.Core.Infrastructure;
 
 public interface IUserDetailsClient
 {

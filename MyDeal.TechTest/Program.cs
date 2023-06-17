@@ -1,5 +1,6 @@
 
 using Microsoft.Net.Http.Headers;
+using MyDeal.TechTest.Core.Infrastructure;
 using MyDeal.TechTest.Services;
 using Polly;
 using Polly.Contrib.WaitAndRetry;
