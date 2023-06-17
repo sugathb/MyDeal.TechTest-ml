@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyDeal.TechTest.Services\MyDeal.TechTest.Services.csproj" />
+    <ProjectReference Include="..\MyDeal.TechTest.Core\MyDeal.TechTest.Core.csproj" />
   </ItemGroup>
 
 </Project>

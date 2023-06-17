@@ -1,6 +1,6 @@
 ﻿using MyDeal.TechTest.Models;
-using MyDeal.TechTest.Services;
 using Microsoft.AspNetCore.Mvc;
+using MyDeal.TechTest.Core.Services;
 
 namespace MyDeal.TechTest.Controllers
 {

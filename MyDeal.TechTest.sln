@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDeal.TechTest.Services", "MyDeal.TechTest.Services\MyDeal.TechTest.Services.csproj", "{8EC102E4-FFAA-4E46-A076-96F265618239}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDeal.TechTest.Services.Tests", "MyDeal.TechTest.Services.Tests\MyDeal.TechTest.Services.Tests.csproj", "{C34C6DEE-9E50-45CC-BA0B-CD76EE5DDD7D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDeal.TechTest", "MyDeal.TechTest\MyDeal.TechTest.csproj", "{3EDE5AEF-B840-4374-AD99-A4168AE6F033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDeal.TechTest.Core", "MyDeal.TechTest.Core\MyDeal.TechTest.Core.csproj", "{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDeal.TechTest.Core", "MyDeal.TechTest.Core\MyDeal.TechTest.Core.csproj", "{78D4BAFC-7786-4C49-B7BE-47D0C8944D29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDeal.TechTest.Core.Tests", "MyDeal.TechTest.Core.Tests\MyDeal.TechTest.Core.Tests.csproj", "{D5FD063B-90C5-48F3-AA32-E92E2AB63CA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8EC102E4-FFAA-4E46-A076-96F265618239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EC102E4-FFAA-4E46-A076-96F265618239}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EC102E4-FFAA-4E46-A076-96F265618239}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EC102E4-FFAA-4E46-A076-96F265618239}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C34C6DEE-9E50-45CC-BA0B-CD76EE5DDD7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C34C6DEE-9E50-45CC-BA0B-CD76EE5DDD7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C34C6DEE-9E50-45CC-BA0B-CD76EE5DDD7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C34C6DEE-9E50-45CC-BA0B-CD76EE5DDD7D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3EDE5AEF-B840-4374-AD99-A4168AE6F033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3EDE5AEF-B840-4374-AD99-A4168AE6F033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EDE5AEF-B840-4374-AD99-A4168AE6F033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EDE5AEF-B840-4374-AD99-A4168AE6F033}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFDA10F4-6C7C-4009-83AF-A2A5D67938DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D4BAFC-7786-4C49-B7BE-47D0C8944D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D4BAFC-7786-4C49-B7BE-47D0C8944D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D4BAFC-7786-4C49-B7BE-47D0C8944D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D4BAFC-7786-4C49-B7BE-47D0C8944D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FD063B-90C5-48F3-AA32-E92E2AB63CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FD063B-90C5-48F3-AA32-E92E2AB63CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FD063B-90C5-48F3-AA32-E92E2AB63CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FD063B-90C5-48F3-AA32-E92E2AB63CA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
