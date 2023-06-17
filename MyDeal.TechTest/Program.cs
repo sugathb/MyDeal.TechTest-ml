@@ -6,8 +6,12 @@ using MyDeal.TechTest.Core.Queries;
 using Polly;
 using Polly.Contrib.WaitAndRetry;
 using Polly.Extensions.Http;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console());
+
 ConfigureServices();
 
 var app = builder.Build();
