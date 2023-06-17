@@ -1,5 +1,6 @@
 using Microsoft.Net.Http.Headers;
 using MyDeal.TechTest.Core.Infrastructure;
+using MyDeal.TechTest.Core.Middleware;
 using MyDeal.TechTest.Core.Models;
 using MyDeal.TechTest.Core.Queries;
 using Polly;
@@ -27,6 +28,8 @@ app.MapDefaultControllerRoute();
 app.MapForwarder("/{**catch-all}", app.Configuration["ProxyTo"])
     .Add(static builder => ((RouteEndpointBuilder)builder).Order = int.MaxValue);
 
+app.UseMiddleware<ErrorHandlingMiddleware>();
+
 app.Run();
 
 
@@ -49,12 +52,14 @@ void ConfigureServices()
         })
         .SetHandlerLifetime(TimeSpan.FromMinutes(5))
         .AddPolicyHandler(GetRetryPolicy());
+
+    builder.Services.AddTransient<ErrorHandlingMiddleware>();
 }
 
 static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
 {
     //Jittered Back-off provides a random factor to separate the retries in high concurrent requestscenarios
-    var delay = Backoff.DecorrelatedJitterBackoffV2(medianFirstRetryDelay: TimeSpan.FromSeconds(1), retryCount: 5);
+    var delay = Backoff.DecorrelatedJitterBackoffV2(medianFirstRetryDelay: TimeSpan.FromSeconds(1), retryCount: 3);
 
     return HttpPolicyExtensions
         .HandleTransientHttpError()

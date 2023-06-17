@@ -29,7 +29,7 @@ namespace MyDeal.TechTest.Core.Queries
 
             return new SettingsVm
             {
-                User = userData.Data,
+                User = userData?.Data,
                 Message = _settingsOptions.Message
             };
         }
