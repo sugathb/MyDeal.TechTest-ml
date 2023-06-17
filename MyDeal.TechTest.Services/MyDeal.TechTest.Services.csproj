@@ -5,4 +5,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyDeal.TechTest.Core\MyDeal.TechTest.Core.csproj" />
+  </ItemGroup>
 </Project>

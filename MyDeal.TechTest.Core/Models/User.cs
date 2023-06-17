@@ -1,8 +1,6 @@
-﻿using System;
-using System.Text.Json.Serialization;
-using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
-namespace MyDeal.TechTest.Services
+namespace MyDeal.TechTest.Core.Models
 {
     public class User
     {

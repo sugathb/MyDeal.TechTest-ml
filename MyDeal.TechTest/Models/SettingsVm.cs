@@ -1,4 +1,4 @@
-﻿using MyDeal.TechTest.Services;
+﻿using MyDeal.TechTest.Core.Models;
 
 namespace MyDeal.TechTest.Models
 {
