@@ -1,6 +1,4 @@
-﻿using MyDeal.TechTest.Core.Models;
-
-namespace MyDeal.TechTest.Models
+﻿namespace MyDeal.TechTest.Core.Models
 {
     public class SettingsVm
     {

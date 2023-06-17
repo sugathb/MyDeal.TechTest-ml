@@ -1,29 +1,23 @@
-﻿using MyDeal.TechTest.Models;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using MyDeal.TechTest.Core.Services;
+using MyDeal.TechTest.Core.Queries;
 
 namespace MyDeal.TechTest.Controllers
 {
     public class SettingsController : Controller
     {
-        private readonly IUserService _userService;
+        private readonly IMediator _mediator;
 
-        public SettingsController(IUserService userService)
+        public SettingsController(IMediator mediator)
         {
-            _userService = userService;
+            _mediator = mediator;
         }
 
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            var userData = await _userService.GetUserDetails("2");
-
-            var response = new SettingsVm
-            {
-                User = userData.Data,
-                Message = "To be read from app settings"
-            };
-
+            var getUserDetailsQuery = new GetUserSettingsAsyncQuery { UserId = "2" };
+            var response = await _mediator.Send(getUserDetailsQuery);
             return Ok(response);
         }
     }
