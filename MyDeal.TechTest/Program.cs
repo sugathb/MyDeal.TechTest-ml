@@ -1,7 +1,7 @@
 
 using Microsoft.Net.Http.Headers;
 using MyDeal.TechTest.Core.Infrastructure;
-using MyDeal.TechTest.Services;
+using MyDeal.TechTest.Core.Services;
 using Polly;
 using Polly.Contrib.WaitAndRetry;
 using Polly.Extensions.Http;
@@ -50,7 +50,7 @@ void ConfigureServices()
 
 static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
 {
-    //Jittered Back-off provides a random factor to separate the retries in high concurrent request scenarios
+    //Jittered Back-off provides a random factor to separate the retries in high concurrent requestscenarios
     var delay = Backoff.DecorrelatedJitterBackoffV2(medianFirstRetryDelay: TimeSpan.FromSeconds(1), retryCount: 5);
 
     return HttpPolicyExtensions

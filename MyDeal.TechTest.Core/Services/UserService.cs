@@ -1,10 +1,10 @@
-﻿using MyDeal.TechTest.Core.Infrastructure;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using MyDeal.TechTest.Core.Infrastructure;
 using MyDeal.TechTest.Core.Models;
 
-namespace MyDeal.TechTest.Services
+namespace MyDeal.TechTest.Core.Services
 {
-    public class UserService: IUserService
+    public class UserService : IUserService
     {
         private readonly IUserDetailsClient _userDetailsClient;
 

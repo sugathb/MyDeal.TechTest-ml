@@ -1,4 +1,5 @@
-﻿using MyDeal.TechTest.Core.Models;
+﻿using System.Threading.Tasks;
+using MyDeal.TechTest.Core.Models;
 
 namespace MyDeal.TechTest.Core.Infrastructure;
 

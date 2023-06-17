@@ -1,9 +1,8 @@
-﻿using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Json;
+using MyDeal.TechTest.Core;
 using MyDeal.TechTest.Core.Models;
 
-namespace MyDeal.TechTest.Core.Infrastructure
+namespace MyDeal.TechTest.Infrastructure
 {
     public class UserDetailsClient : IUserDetailsClient
     {
