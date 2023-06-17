@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\Scripts\jquery-3.4.1.intellisense.js" />
     <Content Remove="wwwroot\Scripts\jquery.validate-vsdoc.js" />
   </ItemGroup>
@@ -28,10 +35,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyDeal.TechTest.Core\MyDeal.TechTest.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
