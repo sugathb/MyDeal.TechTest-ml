@@ -19,12 +19,6 @@ namespace MyDeal.TechTest.Controllers
         {
             var getUserDetailsQuery = new GetUserSettingsAsyncQuery { UserId = UserId };
             var response = await _mediator.Send(getUserDetailsQuery);
-
-            if (response.User == null)
-            {
-                return NotFound();
-            }
-
             return Ok(response);
         }
     }
