@@ -62,7 +62,7 @@ void ConfigureServices()
 
 static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
 {
-    //Jittered Back-off provides a random factor to separate the retries in high concurrent requestscenarios
+    //Jittered Back-off provides a random factor to separate the retries in high concurrent request scenarios
     var delay = Backoff.DecorrelatedJitterBackoffV2(medianFirstRetryDelay: TimeSpan.FromSeconds(1), retryCount: 3);
 
     return HttpPolicyExtensions
